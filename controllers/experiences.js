@@ -7,13 +7,13 @@ const ensureLoggedIn = require('../middleware/ensure-logged-in');
 // This is how we can more easily protect ALL routes for this router
 // router.use(ensureLoggedIn);
 
-// ALL paths start with '/unicorns'
+// ALL paths start with '/experiences'
 
 // index action
-// GET /unicorns
+// GET /experiences
 // Example of a non-protected route
 router.get('/', (req, res) => {
-  res.send('List of all unicorns - not protected');
+  res.send('List of all experiences - not protected');
 });
 
 // GET /unicorns/new

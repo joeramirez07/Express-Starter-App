@@ -1,5 +1,55 @@
-<%- include('./partials/header.ejs') %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>TrackOne</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
 
-<h1>Home</h1>
+  <header>
+    <h1>🎵 TrackOne</h1>
+    <p class="tagline">Now Playing: Curated dining experiences — mood by mood, night by night.</p>
+    <% if (!user) { %>
+      <a href="/auth/sign-in">Sign In</a> | <a href="/auth/sign-up">Join as a Restaurant</a>
+    <% } else { %>
+      <p>Welcome, <%= user.name %> | <a href="/auth/sign-out">Sign Out</a></p>
+    <% } %>
+  </header>
 
-<%- include('./partials/footer.ejs') %>
+  <main>
+    <section class="now-playing">
+      <h2>🎧 Now Playing Tonight</h2>
+      <% if (nowPlaying) { %>
+        <div class="experience-card">
+          <h3><%= nowPlaying.title %></h3>
+          <p><strong>Mood:</strong> <%= nowPlaying.mood %></p>
+          <p><strong>Music:</strong> <%= nowPlaying.music %></p>
+          <p><strong>Ambiance:</strong> <%= nowPlaying.ambiance %></p>
+          <a href="/experiences/<%= nowPlaying._id %>">View Full Experience</a>
+        </div>
+      <% } else { %>
+        <p>No experiences scheduled for tonight. Check back tomorrow!</p>
+      <% } %>
+    </section>
+
+    <section class="setlist">
+      <h2>📅 This Week's Setlist</h2>
+      <ul class="experience-list">
+        <% experiences.forEach(exp => { %>
+          <li>
+            <h4><%= exp.dayOfWeek %>: <%= exp.title %></h4>
+            <p><%= exp.mood %> | <%= exp.music %></p>
+            <a href="/experiences/<%= exp._id %>">See More</a>
+          </li>
+        <% }) %>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; <%= new Date().getFullYear() %> TrackOne. All vibes reserved.</p>
+  </footer>
+
+</body>
+</html>
