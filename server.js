@@ -37,7 +37,30 @@ app.get("/", (req, res) => {
 });
 
 app.use("/auth", require("./controllers/auth"));
-app.use("/experiences", require("./controllers/experiences"));
+
+app.use('/experiences', require('./controllers/experiences'));
+
+
+const Experience = require('./models/experience');
+
+const seed = async () => {
+  const count = await Experience.countDocuments();
+  if (count === 0) {
+    await Experience.create({
+      title: "Monday House Vibes",
+      dayOfWeek: "Monday",
+      mood: "Energetic",
+      music: "House",
+      ambiance: "Loud, neon lighting, upbeat",
+      playlistUrl: "https://open.spotify.com/playlist/fakeurl",
+      meals: []
+    });
+    console.log('🌱 Seeded one test experience!');
+  }
+};
+
+seed();
+
 
 app.listen(port, () => {
   console.log(`The express app is ready on port ${port}!`);

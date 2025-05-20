@@ -1,0 +1,36 @@
+<%- include('../partials/header') %>
+
+<h1>Create a New Dining Experience</h1>
+
+<form action="/experiences" method="POST">
+  <label>Title:</label>
+  <input type="text" name="title" required />
+
+  <label>Day of the Week:</label>
+  <select name="dayOfWeek" required>
+    <option value="">-- Choose a day --</option>
+    <option>Monday</option>
+    <option>Tuesday</option>
+    <option>Wednesday</option>
+    <option>Thursday</option>
+    <option>Friday</option>
+    <option>Saturday</option>
+    <option>Sunday</option>
+  </select>
+
+  <label>Mood:</label>
+  <input type="text" name="mood" placeholder="Chill, Energetic..." required />
+
+  <label>Music:</label>
+  <input type="text" name="music" placeholder="House, Jazz..." required />
+
+  <label>Ambiance:</label>
+  <textarea name="ambiance" rows="2"></textarea>
+
+  <label>Playlist URL:</label>
+  <input type="url" name="playlistUrl" placeholder="https://..." />
+
+  <button type="submit">Create Experience</button>
+</form>
+
+<%- include('../partials/footer') %>

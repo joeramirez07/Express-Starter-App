@@ -1,0 +1,19 @@
+<%- include('../partials/header') %>
+
+<h1>🎧 All Dining Experiences</h1>
+
+<% if (experiences.length === 0) { %>
+  <p>No experiences yet. Try adding one!</p>
+<% } else { %>
+  <ul>
+    <% experiences.forEach(exp => { %>
+      <li>
+        <h2><%= exp.title %> – <%= exp.dayOfWeek %></h2>
+        <p><strong>Mood:</strong> <%= exp.mood %> | <strong>Music:</strong> <%= exp.music %></p>
+        <a href="/experiences/<%= exp._id %>">View Experience</a>
+      </li>
+    <% }) %>
+  </ul>
+<% } %>
+
+<%- include('../partials/footer') %>
