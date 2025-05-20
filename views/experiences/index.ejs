@@ -1,20 +1,43 @@
 <%- include('../partials/header') %>
 
 <h1>All Dining Experiences</h1>
-<a href="/experiences/new">➕ Create New Experience</a>
 
-<% if (experiences.length === 0) { %>
-  <p>No experiences yet. Try adding one!</p>
-<% } else { %>
-  <ul>
-    <% experiences.forEach(exp => { %>
-      <li>
-        <h2><%= exp.title %> – <%= exp.dayOfWeek %></h2>
-        <p><strong>Mood:</strong> <%= exp.mood %> | <strong>Music:</strong> <%= exp.music %></p>
-        <a href="/experiences/<%= exp._id %>">View Experience</a>
-      </li>
-    <% }) %>
-  </ul>
+<!-- Add Experience Button -->
+<div style="margin-bottom: 2rem; text-align: right;">
+  <a href="/experiences/new">
+    <button>Add New Experience</button>
+  </a>
+</div>
+
+<!-- Loop through each day of the week -->
+<% for (let day in experiencesByDay) { %>
+  <% if (experiencesByDay[day].length > 0) { %>
+    <section class="day-section">
+      <h2><%= day %></h2>
+      <div class="experience-grid">
+        <% experiencesByDay[day].forEach(experience => { %>
+          <div class="experience-card">
+            <h3><%= experience.title %></h3>
+
+            <p><strong>Ambiance:</strong> <%= experience.ambiance %></p>
+
+            <% if (experience.playlistUrl) { %>
+              <p><a href="<%= experience.playlistUrl %>" target="_blank">Listen to Playlist 🎵</a></p>
+            <% } %>
+
+            <a href="/experiences/<%= experience._id %>">
+              <button>View Experience</button>
+            </a>
+
+            <div class="experience-tags">
+              <span class="tag mood"><%= experience.mood %></span>
+              <span class="tag"><%= experience.music %></span>
+            </div>
+          </div>
+        <% }) %>
+      </div>
+    </section>
+  <% } %>
 <% } %>
 
 <%- include('../partials/footer') %>

@@ -2,11 +2,28 @@ const express = require('express');
 const router = express.Router();
 const Experience = require('../models/experience');
 
-// INDEX - GET /experiences
+// INDEX - GET /experiences (grouped by day)
 router.get('/', async (req, res) => {
-  const experiences = await Experience.find({});
-  res.render('experiences/index.ejs', { experiences });
+  try {
+    const experiences = await Experience.find();
+
+    const daysOfWeek = [
+      'Monday', 'Tuesday', 'Wednesday',
+      'Thursday', 'Friday', 'Saturday', 'Sunday'
+    ];
+
+    const experiencesByDay = {};
+    daysOfWeek.forEach(day => {
+      experiencesByDay[day] = experiences.filter(exp => exp.dayOfWeek === day);
+    });
+
+    res.render('experiences/index.ejs', { experiencesByDay });
+  } catch (err) {
+    console.error(err);
+    res.send('Error loading experiences');
+  }
 });
+
 
 // NEW - GET /experiences/new
 router.get('/new', (req, res) => {
@@ -129,6 +146,17 @@ router.put('/:expId/meals/:mealId', async (req, res) => {
   } catch (err) {
     console.error(err);
     res.send('Error updating meal.');
+  }
+});
+
+// GET /experiences/:id/menu/edit - show edit menu page
+router.get('/:id/menu/edit', async (req, res) => {
+  try {
+    const experience = await Experience.findById(req.params.id);
+    res.render('experiences/edit-menu.ejs', { experience });
+  } catch (err) {
+    console.error(err);
+    res.send('Error loading edit menu page.');
   }
 });
 

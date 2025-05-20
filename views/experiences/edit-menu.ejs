@@ -1,0 +1,41 @@
+<%- include('../partials/header') %>
+
+<h1>Edit Menu for "<%= experience.title %>"</h1>
+
+<% if (experience.meals.length > 0) { %>
+  <ul>
+    <% experience.meals.forEach(meal => { %>
+      <li>
+        <!-- ✏️ Edit Meal Form -->
+        <form 
+          action="/experiences/<%= experience._id %>/meals/<%= meal._id %>?_method=PUT" 
+          method="POST"
+        >
+          <label>Name:</label>
+          <input type="text" name="name" value="<%= meal.name %>" required />
+
+          <label>Description:</label>
+          <input type="text" name="description" value="<%= meal.description %>" required />
+
+          <button type="submit">Save</button>
+        </form>
+
+        <!-- 🗑 Delete Button -->
+        <form 
+          action="/experiences/<%= experience._id %>/meals/<%= meal._id %>?_method=DELETE" 
+          method="POST"
+          style="margin-top: 0.5rem;"
+        >
+          <button type="submit" onclick="return confirm('Delete this meal?')">Delete</button>
+        </form>
+      </li>
+    <% }) %>
+  </ul>
+<% } else { %>
+  <p>No meals yet for this experience.</p>
+<% } %>
+
+<!-- Back to Experience Page -->
+<a href="/experiences/<%= experience._id %>">← Back to Experience</a>
+
+<%- include('../partials/footer') %>

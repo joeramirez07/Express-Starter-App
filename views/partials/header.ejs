@@ -11,9 +11,15 @@
       <a href="/" class="logo">TrackOne</a>
     </div>
     <div class="nav-right">
-     <a href="/experiences">Experiences</a>
-     <a href="/auth/sign-in">Sign In</a>
-     <a href="/auth/sign-up">Sign Up</a>
+      <a href="/experiences">Experiences</a>
+
+      <% if (!user) { %>
+        <a href="/auth/sign-in">Sign In</a>
+        <a href="/auth/sign-up">Sign Up</a>
+      <% } else { %>
+        <span class="welcome-msg">Hi, <%= user.email %>!</span>
+        <a href="/auth/sign-out">Sign Out</a>
+      <% } %>
     </div>
   </nav>
   <main>
