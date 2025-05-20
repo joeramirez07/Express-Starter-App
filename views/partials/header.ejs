@@ -1,24 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/css/main.css">
-  <title>Express Starter</title>
+  <meta charset="UTF-8" />
+  <title>TrackOne</title>
+  <link rel="stylesheet" href="/css/main.css" />
 </head>
 <body>
-  <nav>
-    <a href="/">🏠</a>
-    <div>
-      <a href="/experiences">ALL Experiences</a>
-      <% if (user) { %>
-        <a href="/experiences/new">ADD UNICORN</a>
-        <a href="/auth/sign-out">SIGN OUT</a>
-        <span><%= user.name %></span>
-      <% } else { %>
-        <a href="/auth/sign-up">SIGN UP</a>
-        <a href="/auth/sign-in">SIGN IN</a>
-      <% } %>
+  <nav class="nav-bar">
+    <div class="nav-left">
+      <a href="/" class="logo">TrackOne</a>
+    </div>
+    <div class="nav-right">
+     <a href="/experiences">Experiences</a>
+     <a href="/auth/sign-in">Sign In</a>
+     <a href="/auth/sign-up">Sign Up</a>
     </div>
   </nav>
   <main>
