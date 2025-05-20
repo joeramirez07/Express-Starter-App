@@ -1,79 +1,123 @@
+/* Typography + Base Reset */
 * {
   box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Georgia', serif;
 }
 
 body {
   margin: 0;
-  height: 100vh;
-  display: grid;
-  grid-template-rows: auto 1fr auto;
+  background-color: #fdfaf6;
+  color: #333;
+  line-height: 1.6;
 }
 
-nav,
-footer {
-  background-color: lightblue;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 2vmin;
-  font-size: 2vh;
-  color: lightslategray;
+/* Layout Container */
+main {
+  max-width: 800px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 0 30px rgba(0,0,0,0.05);
+}
+
+/* Headings */
+h1, h2 {
+  font-weight: normal;
+  color: #2e2b25;
+  border-bottom: 1px solid #e2ddd4;
+  padding-bottom: 0.3rem;
+  margin-bottom: 1rem;
+}
+
+/* Nav + Footer */
+nav, footer {
+  background-color: #e5d0cc;
+  color: #5b5344;
+  padding: 1rem 2rem;
+  text-align: center;
 }
 
 nav a {
+  color: #5b5344;
   text-decoration: none;
-  color: slategray;
-  background-color: white;
-  padding: 1vmin;
-  border-radius: 1vmin;
-
-  &:hover {
-    color: gray;
-    background-color: lightslategray;
-    color: white;
-  }
+  margin: 0 1rem;
+  font-weight: bold;
 }
 
-nav span {
-  font-size: 1.5vmin;
-  color: lightslategray;
+nav a:hover {
+  text-decoration: underline;
+  color: #403c32;
 }
 
-main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 5vmin;
+/* Pastel Tag Badges */
+.tag {
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.85rem;
+  font-weight: bold;
+  border-radius: 999px;
+  margin-right: 0.5rem;
+  background-color: #d6e2e9;  /* soft sky */
+  color: #3c5c66;
 }
 
-form {
-  display: grid;
-  grid-template-columns: auto auto;
-  gap: 2vmin;
+/* Meal Card List */
+ul {
+  padding-left: 0;
+  list-style: none;
 }
 
-form * {
-  font-size: 2vmin;
-  padding: 1vmin;
-  border-radius: 1vmin;
+li {
+  background-color: #f3e8e2;  /* dusty peach */
+  border: 1px solid #e2ccc5;
+  border-radius: 10px;
+  padding: 1rem;
+  margin-bottom: 1rem;
 }
 
-input,
-textarea,
-select {
-  border: 0.3vmin solid black;
-}
-
-form button[type='submit'] {
-  grid-column: span 2;
+/* Buttons */
+button {
+  background-color: #c2d6d6;  /* sage gray */
+  color: #333;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  margin-top: 0.5rem;
 }
 
 button:hover {
-  background-color: lightslategray;
-  color: white;
+  background-color: #a2bcbc;
 }
 
-.error-msg {
-  color: rgb(223, 116, 116);
+/* Form Styling */
+form {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background-color: #f8f4f0;
+  border: 1px solid #e0d8d0;
+  border-radius: 10px;
+}
+
+form input,
+form textarea,
+form select {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: #fffaf7;
+}
+
+form button[type='submit'] {
+  background-color: #dbcfe2;  /* muted lilac */
+  color: #333;
+}
+
+form button:hover {
+  background-color: #c5b6d1;
 }

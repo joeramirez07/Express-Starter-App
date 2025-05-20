@@ -1,0 +1,33 @@
+<%- include('../partials/header') %>
+
+<h1>Edit Experience</h1>
+
+<form action="/experiences/<%= experience._id %>?_method=PUT" method="POST">
+  <label>Title:</label>
+  <input type="text" name="title" value="<%= experience.title %>" required />
+
+  <label>Day of the Week:</label>
+  <select name="dayOfWeek">
+    <% ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'].forEach(day => { %>
+      <option value="<%= day %>" <%= experience.dayOfWeek === day ? 'selected' : '' %>><%= day %></option>
+    <% }) %>
+  </select>
+
+  <label>Mood:</label>
+  <input type="text" name="mood" value="<%= experience.mood %>" required />
+
+  <label>Music:</label>
+  <input type="text" name="music" value="<%= experience.music %>" required />
+
+  <label>Ambiance:</label>
+  <input type="text" name="ambiance" value="<%= experience.ambiance %>" />
+
+  <label>Playlist URL:</label>
+  <input type="text" name="playlistUrl" value="<%= experience.playlistUrl %>" />
+
+  <button type="submit">Update Experience</button>
+</form>
+
+<a href="/experiences/<%= experience._id %>">Cancel</a>
+
+<%- include('../partials/footer') %>
