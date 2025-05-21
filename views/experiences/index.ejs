@@ -2,18 +2,17 @@
 
 <h1>All Dining Experiences</h1>
 
-<!-- Add Experience Button -->
 <div style="margin-bottom: 2rem; text-align: right;">
   <a href="/experiences/new">
     <button>Add New Experience</button>
   </a>
 </div>
 
-<!-- Loop through each day of the week -->
 <% for (let day in experiencesByDay) { %>
-  <% if (experiencesByDay[day].length > 0) { %>
-    <section class="day-section">
-      <h2><%= day %></h2>
+  <section class="day-section">
+    <h2><%= day %></h2>
+
+    <% if (experiencesByDay[day].length > 0) { %>
       <div class="experience-grid">
         <% experiencesByDay[day].forEach(experience => { %>
           <div class="experience-card">
@@ -36,8 +35,10 @@
           </div>
         <% }) %>
       </div>
-    </section>
-  <% } %>
+    <% } else { %>
+      <p class="empty-message">No experiences yet for <%= day %>.</p>
+    <% } %>
+  </section>
 <% } %>
 
 <%- include('../partials/footer') %>

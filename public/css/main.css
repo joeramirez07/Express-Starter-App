@@ -1,6 +1,3 @@
-/* ========================================
-   RESET + BASE TYPOGRAPHY
-======================================== */
 * {
   box-sizing: border-box;
   font-family: 'Helvetica Neue', sans-serif;
@@ -13,9 +10,6 @@ body {
   line-height: 1.6;
 }
 
-/* ========================================
-   LAYOUT STRUCTURE
-======================================== */
 main {
   max-width: 1000px;
   margin: 4rem auto;
@@ -25,9 +19,6 @@ main {
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
 }
 
-/* ========================================
-   NAVIGATION BAR
-======================================== */
 .nav-bar {
   display: flex;
   justify-content: space-between;
@@ -65,42 +56,50 @@ main {
   margin-right: 1rem;
 }
 
-/* ========================================
-   HOMEPAGE STYLES
-======================================== */
 .home-main {
+  min-height: 85vh;
+  display: block;
+  padding: 4rem 2rem;
   text-align: center;
-  padding-top: 10vh;
-  padding-bottom: 10vh;
 }
 
-.home-title {
-  font-size: 4rem;
-  color: #ff6f61;
-  margin-bottom: 1rem;
+
+.home-top {
+  margin-bottom: 2vh;
+}
+
+.home-brand {
+  font-size: 8.9rem;
+  color: #6b5b95;
+  margin-bottom: 0.5rem;
   letter-spacing: 1px;
 }
 
 .home-subtitle {
-  font-size: 1.3rem;
+  font-size: 1.25rem;
   max-width: 600px;
   margin: 0 auto;
   color: #4a4a4a;
 }
 
-.home-btn {
-  background-color: #88b04b;
-  color: white;
-  font-size: 1rem;
-  padding: 0.75rem 1.5rem;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  margin-top: 2rem;
+.home-cta {
+  display: flex;
+  justify-content: center;
 }
 
-.home-btn:hover {
-  background-color: #6f923b;
+.explore-btn {
+  background-color: #ff6f61;
+  color: white;
+  font-size: 1.5rem;
+  padding: 1.2rem 2.5rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.explore-btn:hover {
+  background-color: #e4574f;
 }
 
 .hero-image {
@@ -108,12 +107,9 @@ main {
   height: auto;
   border-radius: 12px;
   margin-bottom: 2rem;
-  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
 }
 
-/* ========================================
-   EXPERIENCE INDEX PAGE
-======================================== */
 .experience-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -143,7 +139,7 @@ main {
   transform: translateY(-4px);
 }
 
-.experience-card h2 {
+.experience-card h3 {
   font-size: 1.6rem;
   color: #6b5b95;
   margin-bottom: 1rem;
@@ -153,10 +149,8 @@ main {
   margin-top: 1.5rem;
 }
 
-/* ========================================
-   TAG STYLES
-======================================== */
-.tag, .day-tag {
+.tag,
+.day-tag {
   display: inline-block;
   padding: 0.2rem 0.7rem;
   font-size: 0.75rem;
@@ -178,9 +172,6 @@ main {
   background-color: #6b5b95;
 }
 
-/* ========================================
-   FORMS & BUTTONS
-======================================== */
 form {
   margin: 3rem 0;
   padding: 2rem;
@@ -218,9 +209,6 @@ button:hover {
   background-color: #56477d;
 }
 
-/* ========================================
-   LIST ITEMS (Meals, Tags, etc.)
-======================================== */
 ul {
   list-style: none;
   padding: 0;
@@ -233,7 +221,7 @@ li {
   border-radius: 12px;
   padding: 1.5rem;
   margin-bottom: 1.5rem;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
 }
 
 li strong {
@@ -241,16 +229,28 @@ li strong {
   font-size: 1.1rem;
 }
 
+.day-section {
+  margin-bottom: 4rem;
+}
+
+.day-section h2 {
+  font-size: 2rem;
+  color: #6b5b95;
+  margin-bottom: 1.5rem;
+}
+
+.empty-message {
+  font-style: italic;
+  color: #999;
+  margin-left: 1rem;
+  margin-bottom: 2rem;
+}
+
 .experience-footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-top: 3rem;
-}
-
-.experience-footer form,
-.experience-footer a {
-  margin: 0;
 }
 
 .danger {
@@ -273,14 +273,3 @@ li strong {
 .back-link:hover {
   background-color: #ddd;
 }
-
- .day-section {
-  margin-bottom: 4rem;
-}
-
-.day-section h2 {
-  font-size: 2rem;
-  color: #6b5b95;
-  margin-bottom: 1.5rem;
-}
-

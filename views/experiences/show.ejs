@@ -2,7 +2,7 @@
 
 <h1><%= experience.title %></h1>
 
-<!-- Mood and Music Tags -->
+
 <div>
   <span class="tag"><%= experience.mood %></span>
   <span class="tag"><%= experience.music %></span>
@@ -32,7 +32,7 @@
   <p>No meals added yet.</p>
 <% } %>
 
-<!-- Edit Menu Button -->
+
 <div style="margin-top: 2rem;">
   <a href="/experiences/<%= experience._id %>/menu/edit">
     <button>Edit Menu</button>
@@ -53,7 +53,7 @@
 </form>
 
 <hr />
-<!-- Delete Experience -->
+
 <div class="experience-footer">
   <form 
     action="/experiences/<%= experience._id %>?_method=DELETE" 

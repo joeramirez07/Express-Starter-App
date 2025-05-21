@@ -2,21 +2,18 @@ const express = require('express');
 const router = express.Router();
 const Experience = require('../models/experience');
 
-// INDEX - GET /experiences (grouped by day)
+// INDEX - GET /experiences by day
 router.get('/', async (req, res) => {
   try {
     const experiences = await Experience.find();
-
     const daysOfWeek = [
       'Monday', 'Tuesday', 'Wednesday',
       'Thursday', 'Friday', 'Saturday', 'Sunday'
     ];
-
     const experiencesByDay = {};
     daysOfWeek.forEach(day => {
       experiencesByDay[day] = experiences.filter(exp => exp.dayOfWeek === day);
     });
-
     res.render('experiences/index.ejs', { experiencesByDay });
   } catch (err) {
     console.error(err);
@@ -118,11 +115,8 @@ router.delete('/:id', async (req, res) => {
 router.delete('/:expId/meals/:mealId', async (req, res) => {
   try {
     const experience = await Experience.findById(req.params.expId);
-
-    // Manually remove the meal by filtering it out
     experience.meals = experience.meals.filter(meal => meal._id.toString() !== req.params.mealId);
-
-    await experience.save();
+   await experience.save();
     res.redirect(`/experiences/${experience._id}`);
   } catch (err) {
     console.error(err);
@@ -135,13 +129,11 @@ router.put('/:expId/meals/:mealId', async (req, res) => {
   try {
     const experience = await Experience.findById(req.params.expId);
     const meal = experience.meals.id(req.params.mealId);
-
-    if (meal) {
+  if (meal) {
       meal.name = req.body.name;
       meal.description = req.body.description;
       await experience.save();
     }
-
     res.redirect(`/experiences/${experience._id}`);
   } catch (err) {
     console.error(err);
