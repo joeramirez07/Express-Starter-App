@@ -28,38 +28,15 @@ app.use(
   })
 );
 
-// Auth middleware to add user to req/res.locals
 app.use(require("./middleware/add-user-to-req-and-locals"));
-
-// Routes
 app.get("/", (req, res) => {
   res.render("home.ejs");
 });
-
 app.use("/auth", require("./controllers/auth"));
-
 app.use('/experiences', require('./controllers/experiences'));
 
 
 const Experience = require('./models/experience');
-
-const seed = async () => {
-  const count = await Experience.countDocuments();
-  if (count === 0) {
-    await Experience.create({
-      title: "Monday House Vibes",
-      dayOfWeek: "Monday",
-      mood: "Energetic",
-      music: "House",
-      ambiance: "Loud, neon lighting, upbeat",
-      playlistUrl: "https://open.spotify.com/playlist/fakeurl",
-      meals: []
-    });
-    console.log('🌱 Seeded one test experience!');
-  }
-};
-
-seed();
 
 
 app.listen(port, () => {
