@@ -1,36 +1,41 @@
 <%- include('../partials/header') %>
 
-<h1>Create a New Dining Experience</h1>
+<h1>Add a New Experience</h1>
 
-<form action="/experiences" method="POST">
+<form action="/experiences" method="POST" class="experience-form">
   <label>Title:</label>
   <input type="text" name="title" required />
 
-  <label>Day of the Week:</label>
+  <label>Day of Week:</label>
   <select name="dayOfWeek" required>
     <option value="">-- Choose a day --</option>
-    <option>Monday</option>
-    <option>Tuesday</option>
-    <option>Wednesday</option>
-    <option>Thursday</option>
-    <option>Friday</option>
-    <option>Saturday</option>
-    <option>Sunday</option>
+    <option value="Monday">Monday</option>
+    <option value="Tuesday">Tuesday</option>
+    <option value="Wednesday">Wednesday</option>
+    <option value="Thursday">Thursday</option>
+    <option value="Friday">Friday</option>
+    <option value="Saturday">Saturday</option>
+    <option value="Sunday">Sunday</option>
   </select>
 
   <label>Mood:</label>
-  <input type="text" name="mood" placeholder="Chill, Energetic..." required />
+  <input type="text" name="mood" required placeholder="e.g. Chill, Energetic" />
 
-  <label>Music:</label>
-  <input type="text" name="music" placeholder="House, Jazz..." required />
+  <label>Music Genre:</label>
+  <input type="text" name="music" required placeholder="e.g. Lo-fi, Jazz, Soul" />
 
   <label>Ambiance:</label>
-  <textarea name="ambiance" rows="2"></textarea>
+  <input type="text" name="ambiance" required placeholder="e.g. Patio, Candlelight, Cozy" />
 
-  <label>Playlist URL:</label>
-  <input type="url" name="playlistUrl" placeholder="https://..." />
+  <label>Playlist URL (optional):</label>
+  <input type="text" name="playlistUrl" placeholder="Paste Spotify/IG link" />
+
+  <label>Notes (optional):</label>
+  <textarea name="notes" placeholder="Add any special notes like 'DJ starts at 8PM' or 'Live jazz during dinner'"></textarea>
 
   <button type="submit">Create Experience</button>
 </form>
+
+<a href="/experiences">← Back to All Experiences</a>
 
 <%- include('../partials/footer') %>

@@ -2,7 +2,6 @@
 
 <h1><%= experience.title %></h1>
 
-
 <div>
   <span class="tag"><%= experience.mood %></span>
   <span class="tag"><%= experience.music %></span>
@@ -17,40 +16,15 @@
   </p>
 <% } %>
 
-<hr />
-<h2>Menu</h2>
-
-<% if (experience.meals.length > 0) { %>
-  <ul>
-    <% experience.meals.forEach(meal => { %>
-      <li>
-        <strong><%= meal.name %></strong>: <%= meal.description %>
-      </li>
-    <% }) %>
-  </ul>
-<% } else { %>
-  <p>No meals added yet.</p>
+<% if (experience.notes) { %>
+  <p><strong>Notes:</strong> <%= experience.notes %></p>
 <% } %>
 
-
 <div style="margin-top: 2rem;">
-  <a href="/experiences/<%= experience._id %>/menu/edit">
-    <button>Edit Menu</button>
+  <a href="/experiences/<%= experience._id %>/edit">
+    <button>Edit Experience</button>
   </a>
 </div>
-
-<hr />
-<h2>Add a Meal</h2>
-
-<form action="/experiences/<%= experience._id %>/meals" method="POST">
-  <label>Meal Name:</label>
-  <input type="text" name="name" required />
-
-  <label>Description:</label>
-  <input type="text" name="description" required />
-
-  <button type="submit">Add Meal</button>
-</form>
 
 <hr />
 
@@ -70,6 +44,5 @@
 
   <a href="/experiences" class="back-link">← Back to All Experiences</a>
 </div>
-
 
 <%- include('../partials/footer') %>
