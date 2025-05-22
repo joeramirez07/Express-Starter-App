@@ -1,72 +1,46 @@
-/* Layout Setup: Sticky Footer */
-html,
+/* Global Styles */
 body {
-  height: 100%;
   margin: 0;
-  display: flex;
-  flex-direction: column;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #f2f2f2;
-  background: none;
-}
-
-body {
   min-height: 100vh;
-}
-
-main {
-  flex: 1;
-  padding: 3rem 1rem;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-/* Background Overlay with Blue Hour Gradient */
-.background-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  background:
-    linear-gradient(
-      to bottom right,
-      rgba(25, 40, 65, 0.65),
-      rgba(70, 100, 150, 0.4)
-    ),
-    url("/images/background.webp");
+  background-image: url('/images/vibe-bg.jpg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #222;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 /* Header/Footer/Nav */
 nav,
 footer {
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(255, 255, 255, 0.9);
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
   font-size: 1rem;
-  color: #f2f2f2;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  color: #444;
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
 }
 
 nav a {
   text-decoration: none;
-  color: #fff;
-  background-color: rgba(255, 255, 255, 0.1);
+  color: #444;
+  background-color: white;
   padding: 0.5rem 1rem;
-  border-radius: 6px;
+  border-radius: 0.375rem;
   margin-left: 1rem;
   transition: all 0.2s ease-in-out;
 }
 
 nav a:hover {
-  background-color: #fff;
-  color: #000;
+  background-color: #555;
+  color: white;
 }
 
 nav .logo {
@@ -75,49 +49,31 @@ nav .logo {
   color: #ff5e57;
 }
 
-/* Page Layout */
+/* Main Page Layout */
 main {
   padding: 3rem 1rem;
-  max-width: 1000px;
+  max-width: 62.5rem;
   margin: 0 auto;
-}
-
-/* Headings & Typography */
-h1,
-h2,
-h3 {
-  color: #ffffff;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-a {
-  color: #8ab4ff;
-  font-weight: 600;
-}
-
-p,
-span,
-label {
-  color: #eaeaea;
 }
 
 /* Experience Cards */
 .experience-card {
-  background: rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(0.75rem);
+  -webkit-backdrop-filter: blur(0.75rem);
+  border: 0.0625rem solid rgba(255, 255, 255, 0.3);
   border-radius: 1rem;
   padding: 1.5rem;
   margin-bottom: 2rem;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0.625rem 1.875rem rgba(0, 0, 0, 0.2);
   transition: transform 0.2s ease-in-out;
 }
 
 .experience-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-0.25rem);
 }
 
+/* Experience Grid */
 .experience-grid {
   display: flex;
   flex-direction: column;
@@ -131,23 +87,28 @@ label {
 
 .tag {
   display: inline-block;
-  background-color: #7ed957;
-  color: #111;
+  background-color: #6cbb5e;
+  color: white;
   padding: 0.3rem 0.75rem;
-  border-radius: 20px;
+  border-radius: 1.25rem;
   font-size: 0.8rem;
   margin-right: 0.5rem;
   font-weight: 600;
 }
 
-/* Buttons */
+/* Headings */
+h1, h2, h3 {
+  margin-bottom: 0.5rem;
+}
+
+/* CTA Buttons */
 button,
 .cta-button {
   background-color: #ff5e57;
   color: white;
   border: none;
   padding: 0.75rem 1.25rem;
-  border-radius: 8px;
+  border-radius: 0.5rem;
   cursor: pointer;
   font-size: 1rem;
   transition: all 0.2s ease-in-out;
@@ -158,7 +119,7 @@ button:hover,
   background-color: #e04a44;
 }
 
-/* Forms */
+/* Form Styles */
 form {
   display: grid;
   gap: 1rem;
@@ -169,82 +130,37 @@ form input,
 form textarea,
 form select {
   padding: 0.75rem;
-  background-color: rgba(255, 255, 255, 0.85);
-  border: 1px solid #ccc;
-  border-radius: 6px;
+  border: 0.0625rem solid #ccc;
+  border-radius: 0.375rem;
   font-size: 1rem;
-  color: #111;
 }
 
 form button {
   width: fit-content;
 }
 
-footer {
-  background-color: rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  color: #ccc;
-  padding: 1rem 2rem;
-  text-align: center;
-  font-size: 0.9rem;
-  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.3);
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+/* Links */
+a {
+  color: #5e2ecc;
+  text-decoration: none;
 }
 
-/* Wrapper */
+a:hover {
+  text-decoration: underline;
+}
+
+/* Footer */
+footer {
+  justify-content: center;
+  font-size: 0.9rem;
+  margin-top: 2rem;
+}
+
+/* Optional: content container */
 .content-wrapper {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.75);
   padding: 2rem;
   border-radius: 1rem;
-  max-width: 1000px;
+  max-width: 62.5rem;
   margin: 2rem auto;
-}
-
-.homepage-hero {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  text-align: center;
-  min-height: 80vh;
-  padding: 6rem 2rem 2rem;
-}
-
-.hero-content h1 {
-  font-size: 4rem;
-  margin-bottom: 0.5rem;
-  color: #fff;
-  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
-}
-
-.hero-content h2 {
-  font-size: 1.8rem;
-  font-weight: 400;
-  margin-bottom: 1rem;
-  color: #eee;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-}
-
-.subheading {
-  font-size: 1.1rem;
-  max-width: 600px;
-  margin: 0 auto 2rem;
-  color: #ccc;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-}
-
-.cta-button {
-  background-color: #ff5e57;
-  color: white;
-  padding: 0.9rem 2rem;
-  font-size: 1.1rem;
-  font-weight: bold;
-  border: none;
-  border-radius: 8px;
-  text-decoration: none;
-  transition: all 0.2s ease-in-out;
-}
-
-.cta-button:hover {
-  background-color: #e04a44;
 }
