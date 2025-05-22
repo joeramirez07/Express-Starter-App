@@ -1,42 +1,35 @@
 <%- include('../partials/header') %>
 
-<h1>All Vibe-Focused Experiences</h1>
+<h1>All Experiences</h1>
 
-<% const days = ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday']; %>
-
-<% days.forEach(day => { %>
-  <section style="margin-bottom: 2rem;">
-    <h2><%= day %></h2>
-
-    <% const experiencesForDay = experiences.filter(e => e.dayOfWeek === day); %>
-
-    <% if (experiencesForDay.length === 0) { %>
-      <p>No experiences yet for <%= day %>.</p>
-    <% } else { %>
-      <div class="experience-grid">
-        <% experiencesForDay.forEach(experience => { %>
-          <div class="experience-card">
-            <h3><a href="/experiences/<%= experience._id %>"><%= experience.title %></a></h3>
-
-            <div class="tag-row">
-              <span class="tag"><%= experience.mood %></span>
-              <span class="tag"><%= experience.music %></span>
-            </div>
-
-            <p><strong>Ambiance:</strong> <%= experience.ambiance %></p>
-
-            <% if (experience.notes) { %>
-              <p><strong>Note:</strong> <%= experience.notes %></p>
-            <% } %>
-          </div>
-        <% }); %>
+<div class="experience-grid">
+  <% if (experiences.length > 0) { %>
+    <% experiences.forEach(experience => { %>
+      <div class="experience-card">
+        <h2><a href="/experiences/<%= experience._id %>"><%= experience.title %></a></h2>
+        <div class="tag-row">
+          <span class="tag"><%= experience.dayOfWeek %></span>
+          <span class="tag"><%= experience.mood %></span>
+          <span class="tag"><%= experience.music %></span>
+        </div>
+        <p><strong>Ambiance:</strong> <%= experience.ambiance %></p>
+        <% if (experience.notes) { %>
+          <p><%= experience.notes %></p>
+        <% } %>
+        <a href="/experiences/<%= experience._id %>">View Details →</a>
       </div>
-    <% } %>
-  </section>
-<% }); %>
-
-<div style="margin-top: 3rem;">
-  <a href="/experiences/new"><button>Add New Experience</button></a>
+    <% }) %>
+  <% } else { %>
+    <p>No experiences have been added yet.</p>
+  <% } %>
 </div>
+
+<% if (user) { %>
+  <div style="margin-top: 2rem; text-align: center;">
+    <a href="/experiences/new">
+      <button>Add New Experience</button>
+    </a>
+  </div>
+<% } %>
 
 <%- include('../partials/footer') %>

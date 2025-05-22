@@ -1,14 +1,17 @@
 <%- include('../partials/header') %>
 
-<h1>Add a New Experience</h1>
+<h1>Create New Experience</h1>
 
-<form action="/experiences" method="POST" class="experience-form">
-  <label>Title:</label>
-  <input type="text" name="title" required />
+<form action="/experiences" method="POST">
+  <label for="title">Experience Title:</label>
+  <input type="text" name="title" id="title" required />
 
-  <label>Day of Week:</label>
-  <select name="dayOfWeek" required>
-    <option value="">-- Choose a day --</option>
+  <label for="venue">Venue:</label>
+  <input type="text" name="venue" id="venue" required />
+
+  <label for="dayOfWeek">Day of the Week:</label>
+  <select name="dayOfWeek" id="dayOfWeek" required>
+    <option value="">--Select a Day--</option>
     <option value="Monday">Monday</option>
     <option value="Tuesday">Tuesday</option>
     <option value="Wednesday">Wednesday</option>
@@ -18,20 +21,20 @@
     <option value="Sunday">Sunday</option>
   </select>
 
-  <label>Mood:</label>
-  <input type="text" name="mood" required placeholder="e.g. Chill, Energetic" />
+  <label for="mood">Mood:</label>
+  <input type="text" name="mood" id="mood" required />
 
-  <label>Music Genre:</label>
-  <input type="text" name="music" required placeholder="e.g. Lo-fi, Jazz, Soul" />
+  <label for="music">Music Genre:</label>
+  <input type="text" name="music" id="music" required />
 
-  <label>Ambiance:</label>
-  <input type="text" name="ambiance" required placeholder="e.g. Patio, Candlelight, Cozy" />
+  <label for="ambiance">Ambiance:</label>
+  <input type="text" name="ambiance" id="ambiance" required />
 
-  <label>Playlist URL (optional):</label>
-  <input type="text" name="playlistUrl" placeholder="Paste Spotify/IG link" />
+  <label for="playlistUrl">Playlist URL (Spotify or SoundCloud):</label>
+  <input type="url" name="playlistUrl" id="playlistUrl" />
 
-  <label>Notes (optional):</label>
-  <textarea name="notes" placeholder="Add any special notes like 'DJ starts at 8PM' or 'Live jazz during dinner'"></textarea>
+  <label for="notes">Additional Notes:</label>
+  <textarea name="notes" id="notes"></textarea>
 
   <button type="submit">Create Experience</button>
 </form>

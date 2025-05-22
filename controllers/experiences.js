@@ -56,6 +56,7 @@ router.put('/:id', async (req, res) => {
   try {
     await Experience.findByIdAndUpdate(req.params.id, {
       title: req.body.title,
+      venue:req.body.venue,
       dayOfWeek: req.body.dayOfWeek,
       mood: req.body.mood,
       music: req.body.music,
