@@ -2,6 +2,8 @@
 
 <h1><%= experience.title %></h1>
 
+<p><strong>Venue:</strong> <%= experience.venue %></p>
+
 <div>
   <span class="tag"><%= experience.mood %></span>
   <span class="tag"><%= experience.music %></span>
@@ -44,7 +46,8 @@
 
 <hr />
 
-<% if (user && user._id.toString() === experience.user.toString()) { %>
+<% if (user && experience.user && user._id.toString() === experience.user.toString()) { %>
+
   <div class="experience-footer">
     <a href="/experiences/<%= experience._id %>/edit">
       <button>Edit Experience</button>

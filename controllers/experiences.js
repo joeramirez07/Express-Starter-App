@@ -4,9 +4,23 @@ const Experience = require('../models/experience');
 
 // INDEX - GET /experiences
 router.get('/', async (req, res) => {
-  const experiences = await Experience.find({});
-  res.render('experiences/index.ejs', { experiences });
+  try {
+    const experiences = await Experience.find({});
+
+    const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+    const grouped = {};
+
+    days.forEach(day => {
+      grouped[day] = experiences.filter(exp => exp.dayOfWeek === day);
+    });
+
+    res.render('experiences/index.ejs', { grouped, user: req.session.user });
+  } catch (err) {
+    console.error(err);
+    res.send('Error loading experiences.');
+  }
 });
+
 
 // NEW - GET /experiences/new
 router.get('/new', (req, res) => {
@@ -18,6 +32,7 @@ router.post('/', async (req, res) => {
   try {
     const newExperience = new Experience({
       title: req.body.title,
+      venue:req.body.venue,
       dayOfWeek: req.body.dayOfWeek,
       mood: req.body.mood,
       music: req.body.music,

@@ -2,27 +2,31 @@
 
 <h1>All Experiences</h1>
 
-<div class="experience-grid">
-  <% if (experiences.length > 0) { %>
-    <% experiences.forEach(experience => { %>
-      <div class="experience-card">
-        <h2><a href="/experiences/<%= experience._id %>"><%= experience.title %></a></h2>
-        <div class="tag-row">
-          <span class="tag"><%= experience.dayOfWeek %></span>
-          <span class="tag"><%= experience.mood %></span>
-          <span class="tag"><%= experience.music %></span>
+<% for (let day in grouped) { %>
+  <h2><%= day %></h2>
+
+  <% if (grouped[day].length > 0) { %>
+    <div class="experience-grid">
+      <% grouped[day].forEach(experience => { %>
+        <div class="experience-card">
+          <span class="venue-badge"><%= experience.venue %></span>
+          <h3><a href="/experiences/<%= experience._id %>"><%= experience.title %></a></h3>
+          <div class="tag-row">
+            <span class="tag"><%= experience.mood %></span>
+            <span class="tag"><%= experience.music %></span>
+          </div>
+          <p><strong>Ambiance:</strong> <%= experience.ambiance %></p>
+          <% if (experience.notes) { %>
+            <p><%= experience.notes %></p>
+          <% } %>
+          <a href="/experiences/<%= experience._id %>">View Details →</a>
         </div>
-        <p><strong>Ambiance:</strong> <%= experience.ambiance %></p>
-        <% if (experience.notes) { %>
-          <p><%= experience.notes %></p>
-        <% } %>
-        <a href="/experiences/<%= experience._id %>">View Details →</a>
-      </div>
-    <% }) %>
+      <% }) %>
+    </div>
   <% } else { %>
-    <p>No experiences have been added yet.</p>
+    <p class="empty-day-msg">No experiences yet for <%= day %>.</p>
   <% } %>
-</div>
+<% } %>
 
 <% if (user) { %>
   <div style="margin-top: 2rem; text-align: center;">
