@@ -1,9 +1,9 @@
-// ✅ models/experience.js
-const mongoose = require('mongoose');
+
+const mongoose = require("mongoose");
 
 const mealSchema = new mongoose.Schema({
   name: String,
-  description: String
+  description: String,
 });
 
 const experienceSchema = new mongoose.Schema({
@@ -18,8 +18,8 @@ const experienceSchema = new mongoose.Schema({
   meals: [mealSchema],
   user: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'User'
-  }
+    ref: "User",
+  },
 });
 
-module.exports = mongoose.model('Experience', experienceSchema);
+module.exports = mongoose.model("Experience", experienceSchema);

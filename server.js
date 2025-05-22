@@ -25,7 +25,7 @@ app.use(
     secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: true,
-  })
+  }),
 );
 
 app.use(require("./middleware/add-user-to-req-and-locals"));
@@ -33,11 +33,9 @@ app.get("/", (req, res) => {
   res.render("home.ejs");
 });
 app.use("/auth", require("./controllers/auth"));
-app.use('/experiences', require('./controllers/experiences'));
+app.use("/experiences", require("./controllers/experiences"));
 
-
-const Experience = require('./models/experience');
-
+const Experience = require("./models/experience");
 
 app.listen(port, () => {
   console.log(`The express app is ready on port ${port}!`);
