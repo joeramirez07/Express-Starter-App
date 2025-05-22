@@ -38,6 +38,15 @@
         allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
         loading="lazy">
       </iframe>
+    <% } else if (experience.playlistUrl.includes('youtube.com') || experience.playlistUrl.includes('youtu.be')) { %>
+      <iframe
+        width="100%"
+        height="315"
+        src="https://www.youtube.com/embed/<%= experience.playlistUrl.split('v=')[1]?.split('&')[0] || experience.playlistUrl.split('.be/')[1] %>"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
     <% } else { %>
       <p><a href="<%= experience.playlistUrl %>" target="_blank">Open playlist</a></p>
     <% } %>

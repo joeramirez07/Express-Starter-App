@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <title>TrackOne</title>
   <link rel="stylesheet" href="/css/main.css" />
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
 </head>
 <body>
   <div class="background-overlay"></div>
@@ -18,7 +19,16 @@
         <a href="/auth/sign-in">Sign In</a>
         <a href="/auth/sign-up">Sign Up</a>
       <% } else { %>
-        <span class="welcome-msg">Hi, <%= user.email %>!</span>
+        <span></span>  <img
+    src="https://api.dicebear.com/9.x/initials/svg?seed=<%= encodeURIComponent(user.email) %>"
+    alt="avatar"
+    style="height:2rem; width:2rem; border-radius:50%; vertical-align:middle; margin-right:0.5em;"
+  />
+        
+        
+        <class="welcome-msg"> Hi, <%= user.email %>!
+        
+        </span>
         <a href="/auth/sign-out">Sign Out</a>
       <% } %>
     </div>
