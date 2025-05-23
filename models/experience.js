@@ -1,5 +1,14 @@
 const mongoose = require("mongoose");
 
+const mealSchema = new mongoose.Schema({
+  name: String,
+  description: String,
+  pairing: String,
+  tags: [String],
+  ambianceNote: String
+}, { timestamps: true });
+
+
 const experienceSchema = new mongoose.Schema({
   title: String,
   venue: String,

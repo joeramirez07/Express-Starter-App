@@ -29,6 +29,7 @@ app.use(
 );
 
 app.use(require("./middleware/add-user-to-req-and-locals"));
+
 app.get("/", (req, res) => {
   res.render("home.ejs");
 });

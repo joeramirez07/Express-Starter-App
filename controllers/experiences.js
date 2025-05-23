@@ -1,9 +1,10 @@
 const express = require("express");
 const router = express.Router();
 const Experience = require("../models/experience");
-
+const ensuredloggedin = require("../middleware/ensure-logged-in")
 
 router.get("/", async (req, res) => {
+  console.log(req.user);
   try {
     const experiences = await Experience.find({});
 
@@ -22,14 +23,14 @@ router.get("/", async (req, res) => {
       grouped[day] = experiences.filter((exp) => exp.dayOfWeek === day);
     });
 
-    res.render("experiences/index.ejs", { grouped, user: req.session.user });
+    res.render("experiences/index.ejs", { grouped, user: req.user });
   } catch (err) {
     console.error(err);
     res.send("Error loading experiences.");
   }
 });
 
-
+router.use(ensuredloggedin)
 router.get("/new", (req, res) => {
   res.render("experiences/new.ejs");
 });
