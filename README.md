@@ -12,14 +12,14 @@ TrackOne is for anyone who chooses a restaurant based on the energy it gives off
 ---
 
 
-## 🌟 Features
+## Features
 
-- 🎧 Mood-based experience discovery (Energetic, Chill, Reflective, etc.)
-- 🍷 Venue profiles with playlist embeds (Spotify, SoundCloud, YouTube)
-- 📅 Experiences categorized by day of the week
-- 💬 Optional notes to add details about DJs, playlists, or ambiance
-- 🧑‍💼 User authentication for venues to manage their listings
-- ✍️ Full CRUD: Create, edit, and delete experiences and menu descriptions
+- Mood-based experience discovery (Energetic, Chill, Reflective, etc.)
+- Venue profiles with playlist embeds (Spotify, SoundCloud, YouTube)
+- Experiences categorized by day of the week
+- Optional notes to add details about DJs, playlists, or ambiance
+- User authentication for venues to manage their listings
+- Full CRUD: Create, edit, and delete experiences and menu descriptions
 
 ---
 
@@ -42,3 +42,24 @@ TrackOne is for anyone who chooses a restaurant based on the energy it gives off
 - Responsive design with mobile-first styling
 
 
+## Getting Started
+
+[Click here to start App! https://trackone-0eba418a86a6.herokuapp.com/
+
+
+
+
+## Next Steps
+
+Here’s what I’d love to explore in future versions of TrackOne:
+
+-  Filter experiences by city or nearby venues
+- Let users search by music genre, mood, or time of day
+-  Prioritize experiences based on trending tags or user favorites
+- Enable users to “save to home screen” and browse vibes on the go
+-  Make it easier for venue owners to manage their listings
+-  See what’s playing throughout the week at a glance
+-  Auto-play short snippets from Spotify, SoundCloud, or YouTube
+- Tag nights with DJs, live bands, or special events
+- Let users opt-in to notifications for events that match their favorite moods
+- Let visitors add their own vibe descriptors or short reviews
