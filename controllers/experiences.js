@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const Experience = require("../models/experience");
 
-// INDEX - GET /experiences
+
 router.get("/", async (req, res) => {
   try {
     const experiences = await Experience.find({});
@@ -29,12 +29,11 @@ router.get("/", async (req, res) => {
   }
 });
 
-// NEW - GET /experiences/new
+
 router.get("/new", (req, res) => {
   res.render("experiences/new.ejs");
 });
 
-// CREATE - POST /experiences
 router.post("/", async (req, res) => {
   try {
     const newExperience = new Experience({
@@ -56,7 +55,7 @@ router.post("/", async (req, res) => {
   }
 });
 
-// SHOW - GET /experiences/:id
+
 router.get("/:id", async (req, res) => {
   try {
     const experience = await Experience.findById(req.params.id);
@@ -67,13 +66,13 @@ router.get("/:id", async (req, res) => {
   }
 });
 
-// EDIT - GET /experiences/:id/edit
+
 router.get("/:id/edit", async (req, res) => {
   const experience = await Experience.findById(req.params.id);
   res.render("experiences/edit.ejs", { experience });
 });
 
-// UPDATE - PUT /experiences/:id
+
 router.put("/:id", async (req, res) => {
   try {
     await Experience.findByIdAndUpdate(req.params.id, {
@@ -93,7 +92,7 @@ router.put("/:id", async (req, res) => {
   }
 });
 
-// DELETE - DELETE /experiences/:id
+
 router.delete("/:id", async (req, res) => {
   try {
     await Experience.findByIdAndDelete(req.params.id);

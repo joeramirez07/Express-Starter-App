@@ -1,4 +1,4 @@
-/* Layout Setup: Sticky Footer */
+
 html,
 body {
   height: 100%;
@@ -21,7 +21,7 @@ main {
   margin: 0 auto;
 }
 
-/* Background Overlay with Blue Hour Gradient */
+
 .background-overlay {
   position: fixed;
   top: 0;
@@ -41,7 +41,7 @@ main {
   background-attachment: fixed;
 }
 
-/* Header/Footer/Nav */
+
 nav,
 footer {
   background-color: rgba(0, 0, 0, 0.6);
@@ -76,7 +76,7 @@ nav .logo {
   color: #ff5e57;
 }
 
-/* Headings & Typography */
+
 h1,
 h2,
 h3 {
@@ -95,7 +95,7 @@ label {
   color: #eaeaea;
 }
 
-/* Experience Cards */
+
 .experience-card {
   background: rgba(255, 255, 255, 0.12);
   backdrop-filter: blur(12px);
@@ -118,7 +118,7 @@ label {
   gap: 1.5rem;
 }
 
-/* Tags */
+
 .tag-row {
   margin: 0.5rem 0;
 }
@@ -134,7 +134,7 @@ label {
   font-weight: 600;
 }
 
-/* Buttons */
+
 button,
 .cta-button {
   background-color: #ff5e57;
@@ -152,7 +152,7 @@ button:hover,
   background-color: #e04a44;
 }
 
-/* Forms */
+
 form {
   display: grid;
   gap: 1rem;
@@ -186,7 +186,7 @@ footer {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Wrapper */
+
 .content-wrapper {
   background-color: rgba(255, 255, 255, 0.1);
   padding: 2rem;

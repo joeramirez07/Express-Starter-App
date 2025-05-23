@@ -6,16 +6,16 @@ const methodOverride = require("method-override");
 const morgan = require("morgan");
 const session = require("express-session");
 
-// Set the port
+
 const port = process.env.PORT || 3000;
 
-// Connect to MongoDB
+
 mongoose.connect(process.env.MONGODB_URI);
 mongoose.connection.on("connected", () => {
   console.log(`Connected to MongoDB ${mongoose.connection.name}.`);
 });
 
-// Middleware
+
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride("_method"));
