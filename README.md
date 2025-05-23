@@ -26,10 +26,10 @@ TrackOne is for anyone who chooses a restaurant based on the energy it gives off
 ## 📸 Screenshots
 
 **Homepage**  
-<img src="https://imgur.com/cj2qJSk.png" alt="Wordle screenshot">
+<img src="https://imgur.com/xsmouCs.png" alt="Wordle screenshot">
 
 **Experience Card**  
-<img src="https://imgur.com/FMcE8TY.png" alt="Wordle screenshot">
+<img src="https://imgur.com/S7BO4CL.png" alt="Wordle screenshot">
 
 ---
 
