@@ -1,10 +1,5 @@
 const mongoose = require("mongoose");
 
-const mealSchema = new mongoose.Schema({
-  name: String,
-  description: String,
-});
-
 const experienceSchema = new mongoose.Schema({
   title: String,
   venue: String,

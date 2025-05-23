@@ -39,6 +39,9 @@ TrackOne is for anyone who chooses a restaurant based on the energy it gives off
 - MongoDB / Mongoose
 - EJS templates
 - HTML/ CSS
+- Heroku
+- Favicon
+- DiceBear
 
 ## References
 
