@@ -5,7 +5,8 @@
 > Discover what’s playing — not just what’s on the menu.
 ## 🚀 Description
 
-Hi, I'm Joe — a lifelong music lover, atmosphere junkie, and budding software engineer. TrackOne is a web app that helps people discover the vibe *before* they pick the venue. Whether it’s a wine bar playing deep house or a brunch café spinning Motown, this app helps users find experiences curated by **mood**, **music**, and **ambiance**.
+TrackOne is a web application designed to help users discover curated venue experiences based on mood, music, and ambiance. Whether it’s a wine bar with deep house or a morning café playing Motown, TrackOne makes it easy to find the right vibe before choosing a place to go. This project was developed by Joe Ramirez as part of General Assembly's Software Engineering Immersive.
+
 
 TrackOne is for anyone who chooses a restaurant based on the energy it gives off — not just what’s on the menu.
 
@@ -26,20 +27,29 @@ TrackOne is for anyone who chooses a restaurant based on the energy it gives off
 ## 📸 Screenshots
 
 **Homepage**  
-<img src="https://imgur.com/xsmouCs.png" alt="Wordle screenshot">
+<img src="https://imgur.com/xsmouCs.png" alt="Screenshot">
 
 **Experience Card**  
-<img src="https://imgur.com/S7BO4CL.png" alt="Wordle screenshot">
+<img src="https://imgur.com/S7BO4CL.png" alt="Screenshot">
 
 ---
 
-## 🛠️ Built With
+## Built With
 
 - Node.js / Express
 - MongoDB / Mongoose
 - EJS templates
-- HTML5 / CSS3
-- Responsive design with mobile-first styling
+- HTML/ CSS
+
+
+## References
+
+- Background Image - Bar Shiru, Oakland, CA http://www.barshiru.com/
+- Spotify
+- Soundcloud
+- Youtube
+
+
 
 
 ## Getting Started
